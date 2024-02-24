@@ -1,4 +1,3 @@
-from contextvars import Token
 import logging
 import os
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -7,6 +6,7 @@ from flask import jsonify, request
 from sqlalchemy import and_, text
 from random import randint
 from config import app, db
+from models import Token, User
 
 
 port_number = int(os.environ.get("APP_PORT", 5153))
